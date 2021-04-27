@@ -30,6 +30,12 @@ Game.init(
                 key: 'id'
             }
         }
+    },
+    {
+        sequelize,
+        freezeTableName: true,
+        underscored: true,
+        modelName: 'game',
     }
 );
 
