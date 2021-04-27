@@ -28,8 +28,9 @@ router.get('/', async (req, res) => {
 
         res.render('homepage', {
             characters,
-            games
-        });
+            games,
+            logged_in: req.session.logged_in
+        })
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
@@ -67,3 +68,5 @@ router.get('/character/:id', async (req, res) => {
         res.status(500).json(err);
     }
 });
+
+module.exports = router;
