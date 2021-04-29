@@ -1,0 +1,22 @@
+[
+    {
+      "title": "Tomb Raider",
+      "genre": "Action-Adventure",
+      "description": "Race against time and villains to recover powerful ancient artifacts."
+    },
+    {
+      "title": "Chess Master",
+      "genre": "Puzzle, Strategy Game",
+      "description": "Go against the computer in this strategy board game. Be the first to kill the opponents king and you win. Make sure you dont get yours killed first in the process or you lose."
+    },
+    {
+      "title": "Call of Duty",
+      "genre": "Action-War",
+      "description": "First person shooter game that simulates infantry and combined arms warefare."
+    },
+    {
+      "title": "NBA Ballers",
+      "genre": "Sports",
+      "description": "Basketball streetball game similar to AND1 and gameplay similar to old arcade basketball games."
+    }
+  ]
