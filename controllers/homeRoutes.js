@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Character, Game } = require('../models');
+const { Character, Game, User } = require('../models');
 
 // Get all characters for the homepage
 
@@ -8,8 +8,9 @@ router.get('/', async (req, res) => {
         const dbCharacterData = await Character.findAll({
             include: [
                 {
-                    model: Character,
-                    attributes: ['id', 'first_name', 'last_name', 'user_id']
+                    model: User,
+                    all: true,
+                    nested: true
                 }
             ]
         });
@@ -17,8 +18,9 @@ router.get('/', async (req, res) => {
         const dbGameData = await Game.findAll({
             include: [
                 {
-                    model: Game,
-                    attributes: ['id', 'title', 'genre', 'description', "user_id", 'game_id']
+                    model: User,
+                    all: true,
+                    nested: true
                 }
             ]
         })
@@ -67,3 +69,5 @@ router.get('/character/:id', async (req, res) => {
         res.status(500).json(err);
     }
 });
+
+module.exports = router;
