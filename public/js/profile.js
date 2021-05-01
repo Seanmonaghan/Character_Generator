@@ -1,3 +1,9 @@
+var first_names = ["Bob", "Tom", "Steven", "Sarah", "Jill"];
+var last_names = ["Osborn", "Jackson", "Erwin", "Booker", "Bowie"];
+var personalities = ["The Duty Fulfiller", "The Nurturer", "The Protector", "The Scientist", "The Mechanic", "The Artist", "The Idealist", "The Doer", "The Performer", "The Inspirer", "The Visionary", "The Guardian", "The Caregiver", "The Giver", "The Executive"];
+var hairstyles = ["Crew Cut", "Bowl Cut", "Caeser Cut", "Bob Cut", "Pixie Cut", "Undercut", "Mohawk",  ]
+var dress_styles = ["Gothic", "Casual", "Hipster", "Thrift Store Chic", "Ivy League", "Bohemian"]
+
 const newFormHandler = async (event) => {
     event.preventDefault();
 
@@ -30,7 +36,7 @@ const newFormHandler = async (event) => {
     if (event.target.hasAttribute('data-id')) {
       const id = event.target.getAttribute('data-id');
   
-      const response = await fetch(`/api/projects/${id}`, {
+      const response = await fetch(`/api/characters/${id}`, {
         method: 'DELETE',
       });
   
@@ -82,20 +88,66 @@ const newFormHandler = async (event) => {
       }
     }
   };
-  
+
+  // Randomizer Functions
+
+function generateRandomFirstName() {
+  const name = document.querySelector('#first_name');
+  var first_name = first_names[Math.floor(Math.random() * first_names.length)];
+  name.value = first_name;
+}
+
+function generateRandomLastName() {
+  const name = document.querySelector('#last_name');
+  var last_name = last_names[Math.floor(Math.random() * last_names.length)];
+  name.value = last_name;
+}
+
+function generateRandomPersonality() {
+  const pers = document.querySelector('#personality');
+  var personality = personalities[Math.floor(Math.random() * personalities.length)];
+  pers.value = personality;
+}
+
+function generateRandomHairstyle() {
+  const style = document.querySelector('#hairstyle');
+  var hairstyle = hairstyles[Math.floor(Math.random() * hairstyles.length)];
+  style.value = hairstyle;
+}
+
+function generateRandomDressStyle() {
+  const style = document.querySelector('#dress_style');
+  var dress_style = dress_styles[Math.floor(Math.random() * dress_styles.length)];
+  style.value = dress_style;
+}
+
+function generateRandomAge() {
+  const ageEl = document.querySelector('#age');
+  var age = Math.floor(Math.random() * 84 + 16);
+  ageEl.value = age;
+}
+// Add Character
 document
     .querySelector('.new-character-form')
     .addEventListener('submit', newFormHandler);
   
-// document
-//     .querySelector('.character-list')
-//     .addEventListener('click', characterDelButtonHandler);
-
+// Delete Character
+document
+    .querySelector('.character-list')
+    .addEventListener('click', characterDelButtonHandler);
+// Add Game
 document
     .querySelector('.new-game-form')
     .addEventListener('submit', newGameFormHandler);
+// Delete Game
+document
+    .querySelector('.games-list')
+    .addEventListener('click', GameDelButtonHandler);
 
-// document
-//     .querySelector('.game-list')
-//     .addEventListener('click', GameDelButtonHandler);
-  
+  // Randomizers 
+document.querySelector("#first_name_button").addEventListener('click', generateRandomFirstName)
+document.querySelector("#last_name_button").addEventListener('click', generateRandomLastName)
+document.querySelector("#personality_button").addEventListener('click', generateRandomPersonality)
+document.querySelector("#hair_style_button").addEventListener('click', generateRandomHairstyle)
+document.querySelector("#dress_style_button").addEventListener('click', generateRandomDressStyle)
+document.querySelector("#age_button").addEventListener('click', generateRandomAge)
