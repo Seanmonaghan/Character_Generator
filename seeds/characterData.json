@@ -1,11 +1,11 @@
 [
     {
-      "first_name": "Nathan",
-      "last_name": "Drake",
-      "personality": "The Healer",
-      "hairstyle": "Bro Flow",
-      "dress_style": "Doctors Scrubs",
-      "age" : 25
+        "first_name": "Nathan",
+        "last_name": "Drake",
+        "personality": "The Healer",
+        "hairstyle": "Bro Flow",
+        "dress_style": "Doctors Scrubs",
+        "age" : 25
     },
     {
         "first_name": "Deckard",
