@@ -43,8 +43,8 @@ router.get('/', async (req, res) => {
         // const games = dbGameData.map((game) => game.get({plain: true}));
 
         res.render('homepage', {
-            characters
-            // games
+            characters,
+            logged_in: req.session.logged_in
         });
     } catch (err) {
         console.log(err);
