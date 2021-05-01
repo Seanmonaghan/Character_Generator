@@ -14,18 +14,6 @@ router.get('/', async (req, res) => {
                     all: true,
                     nested: true
                 },
-                {
-                    model: Character,
-                    all: true,
-                    required: false,
-                    include: [
-                        {
-                            model: User,
-                            all: true,
-                            required: false
-                        }
-                    ]
-                }
             ]
         });
 
@@ -40,10 +28,11 @@ router.get('/', async (req, res) => {
         })
 
         const characters = CharacterGameData.map((character) => character.get({plain: true}));
-        // const games = dbGameData.map((game) => game.get({plain: true}));
+        const games = dbGameData.map((game) => game.get({plain: true}));
 
         res.render('homepage', {
-            characters,
+            characters:characters,
+            games:games,
             logged_in: req.session.logged_in
         });
     } catch (err) {
