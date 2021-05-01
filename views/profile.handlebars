@@ -15,35 +15,59 @@
         <input class="form-input" type="text" id="first_name" name="first_name" />
       </div>
 
+      <div>
+        <button id = "first_name_button">Randomize</button>
+      </div>
+
       <div class="form-group">
         <label for="last_name">Character's Last Name:</label>
         <input class="form-input" type="text" id="last_name" name="last_name" />
       </div>
 
+      <div>
+        <button id = "last_name_button">Randomize</button>
+      </div>
+
       <div class="form-group">
-        <label for="personality">Character's Personality':</label>
+        <label for="personality">Character's Personality:</label>
         <input class="form-input" type="text" id="personality" name="personality" />
       </div>
 
+      <div>
+        <button id = "personality_button">Randomize</button>
+      </div>
+
       <div class="form-group">
-        <label for="hairstyle">Character's Hairstyle':</label>
+        <label for="hairstyle">Character's Hairstyle:</label>
         <input class="form-input" type="text" id="hairstyle" name="hairstyle" />
       </div>
 
-      <div class="form-group">
-        <label for="dress_style">Character's Dress Style':</label>
-        <input class="form-input" type="text" id="dress_style" name="dress_style" />
+      <div>
+        <button id = "hair_style_button">Randomize</button>
       </div>
 
       <div class="form-group">
-        <label for="age">Character's Age':</label>
+        <label for="dress_style">Character's Dress Style:</label>
+        <input class="form-input" type="text" id="dress_style" name="dress_style" />
+      </div>
+
+      <div>
+        <button id = "dress_style_button">Randomize</button>
+      </div>
+
+      <div class="form-group">
+        <label for="age">Character's Age:</label>
         <input class="form-input" type="number" id="age" name="age" />
+      </div>
+
+      <div>
+        <button id = "age_button">Randomize</button>
       </div>
 
       {{#if games}}
         <div class="form-group">
         <label for="character-name">Game:</label>
-        <select name = 'game' id = "game">
+        <select name ='game' id ="game">
         {{#each games as |game|}}
         <option value = "{{game.title}}">{{game.title}}</option>
         {{/each}}
