@@ -8,7 +8,7 @@
   <div class="col-md-6">
     <h3>Create a New Character:</h3>
 
-    <form class="form new-project-form">
+    <form class="form new-character-form">
 
       <div class="form-group">
         <label for="first_name">Character's First Name:</label>
@@ -43,60 +43,71 @@
       {{#if games}}
         <div class="form-group">
         <label for="character-name">Game:</label>
-        {{#each}}
-        <option value = "{{game}}">{{game}}</option>
+        <select name = 'game' id = "game">
+        {{#each games as |game|}}
+        <option value = "{{game.title}}">{{game.title}}</option>
         {{/each}}
+        </select>
       </div>
       {{/if}}
 
+       <div class="form-group">
+        <button type="submit" class="btn btn-primary">Create Character</button>
+      </div>
 
-      <div class="form-group">
-        <label for="project-funding">needed funding ($):</label>
-        <input class="form-input" type="number" id="project-funding" name="project-funding" />
-      </div>
-      <div class="form-group">
-        <label for="project-desc">description:</label>
-        <textarea class="form-input" id="project-desc" name="project-desc"></textarea>
-      </div>
-      <div class="form-group">
-        <button type="submit" class="btn btn-primary">Create</button>
-      </div>
     </form>
   </div>
 
    <div class="col-md-6">
     <h3>Create a New Game:</h3>
 
-    <form class="form new-project-form">
+    <form class="form new-game-form">
       <div class="form-group">
-        <label for="character-name">Character Name:</label>
-        <input class="form-input" type="text" id="character-name" name="character-name" />
+        <label for="title">Game's Title:</label>
+        <input class="form-input" type="text" id="title" name="title" />
       </div>
       <div class="form-group">
-        <label for="project-funding">needed funding ($):</label>
-        <input class="form-input" type="number" id="project-funding" name="project-funding" />
+        <label for="genre">Game's Genre:</label>
+        <input class="form-input" type="text" id="genre" name="genre" />
       </div>
       <div class="form-group">
-        <label for="project-desc">description:</label>
-        <textarea class="form-input" id="project-desc" name="project-desc"></textarea>
+        <label for="description">Description:</label>
+        <textarea class="form-input" id="description" name="description"></textarea>
       </div>
       <div class="form-group">
-        <button type="submit" class="btn btn-primary">Create</button>
+        <button type="submit" class="btn btn-primary">Create Game</button>
       </div>
     </form>
   </div>
 
-  {{#if projects.length}}
-  <div class="col-md-6 project-list">
-    <h3>Current Projects:</h3>
+{{#if characters.length}}
+<div class="col-md-6 character-list">
+  <h3>Current Characters</h3>
 
-    {{#each projects as |project|}}
+  {{#each characters as |character|}}
     <div class="row mb-2">
       <div class="col-md-8">
-        <h4><a href="/project/{{project.id}}">{{project.name}}</a></h4>
+        <h4><a href="/character/{{character.id}}">{{character.first_name}} {{character.last_name}}</a></h4>
+    </div>
+    <div class="col-md-4">
+        <button class="btn btn-sm btn-danger" data-id="{{character.id}}">DELETE</button>
+    </div>
+  </div>
+  {{/each}}
+</div>
+{{/if}}
+
+  {{#if games.length}}
+  <div class="col-md-6 games-list">
+    <h3>Current Games:</h3>
+
+    {{#each games as |game|}}
+    <div class="row mb-2">
+      <div class="col-md-8">
+        <h4><a href="/game/{{game.id}}">{{game.title}}</a></h4>
       </div>
       <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{project.id}}">DELETE</button>
+        <button class="btn btn-sm btn-danger" data-id="{{game.id}}">DELETE</button>
       </div>
     </div>
     {{/each}}

@@ -57,13 +57,34 @@ router.get('/profile', withAuth, async (req, res) => {
       // Find the logged in user based on the session ID
       const userData = await User.findByPk(req.session.user_id, {
         attributes: { exclude: ['password'] },
-        // include: [{ model: Character }],
+        include: [
+            {
+                model: Game,
+                required: false,
+                all: true
+            },
+            {
+                model: Character,
+                required:false,
+                all: true
+            }
+        ],
       });
+
+    //   const characterData = await Character.findAll(req.session.user_id, {
+    //       include: [{
+    //           model: Character,
+    //           required: false,
+    //           all: true
+    //       }]
+    //   })
   
       const user = userData.get({ plain: true });
+    //   const char = characterData.map(char => char.get({plain: true}));
   
       res.render('profile', {
         ...user,
+        // ...char,
         logged_in: true
       });
     } catch (err) {
@@ -77,7 +98,18 @@ router.get('/game/:id', async (req, res) => {
             include: [
                 {
                     model: Game,
-                    attributes: [ 'id', 'title', 'genre', 'description', 'game_id', 'user_id' ]
+                    required: true,
+                    all: true,
+                },
+                {
+                    model: User,
+                    required: false,
+                    all: true
+                },
+                {
+                    model: Character,
+                    required: false,
+                    all: true
                 }
             ]
         });
