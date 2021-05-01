@@ -6,7 +6,66 @@
 
 <div class="row mt-4">
   <div class="col-md-6">
-    <h3>Create a New Project:</h3>
+    <h3>Create a New Character:</h3>
+
+    <form class="form new-project-form">
+
+      <div class="form-group">
+        <label for="first_name">Character's First Name:</label>
+        <input class="form-input" type="text" id="first_name" name="first_name" />
+      </div>
+
+      <div class="form-group">
+        <label for="last_name">Character's Last Name:</label>
+        <input class="form-input" type="text" id="last_name" name="last_name" />
+      </div>
+
+      <div class="form-group">
+        <label for="personality">Character's Personality':</label>
+        <input class="form-input" type="text" id="personality" name="personality" />
+      </div>
+
+      <div class="form-group">
+        <label for="hairstyle">Character's Hairstyle':</label>
+        <input class="form-input" type="text" id="hairstyle" name="hairstyle" />
+      </div>
+
+      <div class="form-group">
+        <label for="dress_style">Character's Dress Style':</label>
+        <input class="form-input" type="text" id="dress_style" name="dress_style" />
+      </div>
+
+      <div class="form-group">
+        <label for="age">Character's Age':</label>
+        <input class="form-input" type="number" id="age" name="age" />
+      </div>
+
+      {{#if games}}
+        <div class="form-group">
+        <label for="character-name">Game:</label>
+        {{#each}}
+        <option value = "{{game}}">{{game}}</option>
+        {{/each}}
+      </div>
+      {{/if}}
+
+
+      <div class="form-group">
+        <label for="project-funding">needed funding ($):</label>
+        <input class="form-input" type="number" id="project-funding" name="project-funding" />
+      </div>
+      <div class="form-group">
+        <label for="project-desc">description:</label>
+        <textarea class="form-input" id="project-desc" name="project-desc"></textarea>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Create</button>
+      </div>
+    </form>
+  </div>
+
+   <div class="col-md-6">
+    <h3>Create a New Game:</h3>
 
     <form class="form new-project-form">
       <div class="form-group">
