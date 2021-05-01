@@ -11,11 +11,7 @@ Character.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        first_name: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        last_name: {
+        name: {
             type: DataTypes.STRING,
             allowNull: false
         },
@@ -24,10 +20,6 @@ Character.init(
             allowNull: true
         },
         hairstyle: {
-            type: DataTypes.STRING,
-            allowNull: true
-        },
-        dress_style: {
             type: DataTypes.STRING,
             allowNull: true
         },

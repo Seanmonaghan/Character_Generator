@@ -1,18 +1,16 @@
 const newFormHandler = async (event) => {
     event.preventDefault();
 
-    const first_name = document.querySelector('#firstName').value.trim();
-    const last_name = document.querySelector('#lastName').value.trim();
+    const name = document.querySelector('#name').value.trim();
     const personality = document.querySelector('#personality').value.trim();
-    const hairstyle = document.querySelector('hairstyle').value.trim();
-    const dressStyle = document.querySelector('dressStyle').value.trim();
-    const age = document.querySelector('age').value.trim();
-    const game = document.querySelector('game').value.trim();
+    const hairstyle = document.querySelector('#hairstyle').value.trim();
+    const age = document.querySelector('#age').value.trim();
+    const game = document.querySelector('#charactersGame').value;
 
-    if (first_name && last_name && personality && hairstyle && dressStyle && age && game) {
+    if (name && personality && hairstyle && age) {
       const response = await fetch(`/api/characters`, {
         method: 'POST',
-        body: JSON.stringify({ first_name, last_name, personality, hairstyle, dressStyle, age, game }),
+        body: JSON.stringify({ name, personality, hairstyle, age}),
         headers: {
           'Content-Type': 'application/json',
         }
@@ -46,9 +44,9 @@ const newFormHandler = async (event) => {
   const newGameFormHandler = async (event) => {
     event.preventDefault();
 
-    const title = document.querySelector('title').value.trim();
-    const genre = document.querySelector('genre').value.trim();
-    const description = document.querySelector('description').value.trim();
+    const title = document.querySelector("#title").value.trim();
+    const genre = document.querySelector("#genre").value.trim();
+    const description = document.querySelector("#description").value.trim();
 
     if (title, genre, description) {
       const response = await fetch(`/api/games`, {
@@ -87,15 +85,15 @@ document
     .querySelector('.new-character-form')
     .addEventListener('submit', newFormHandler);
   
-document
-    .querySelector('.character-list')
-    .addEventListener('click', characterDelButtonHandler);
+// document
+//     .querySelector('.character-list')
+//     .addEventListener('click', characterDelButtonHandler);
 
 document
     .querySelector('.new-game-form')
     .addEventListener('submit', newGameFormHandler);
 
-document
-    .querySelector('.game-list')
-    .addEventListener('click', GameDelButtonHandler);
+// document
+//     .querySelector('.game-list')
+//     .addEventListener('click', GameDelButtonHandler);
   
