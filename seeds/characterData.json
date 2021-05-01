@@ -1,26 +1,34 @@
 [
     {
-      "name": "Nathan Drake",
-      "personality": "The Defender",
+      "first_name": "Nathan",
+      "last_name": "Drake",
+      "personality": "The Healer",
       "hairstyle": "Bro Flow",
+      "dress_style": "Doctors Scrubs",
       "age" : 25
     },
     {
-        "name" : "Deckard Cain",
+        "first_name": "Deckard",
+        "last_name": "Cain",
         "personality": "The Mastermind",
         "hairstyle": "Buzz Cut",
+        "dress_style": "The Classic Style Guy",
         "age" : 40
     },
     {
-        "name" : "Ricky Bobby",
+        "first_name": "Ricky",
+        "last_name": "Bobby",
         "personality": "The Counselor",
         "hairstyle": "Caesar Cut",
+        "dress_style": "The Jet-Setter",
         "age" : 32
     },
     {
-        "name": "Samus Aran",
+        "first_name": "Samus",
+        "last_name": "Aran",
         "personality": "The Champion",
         "hairstyle": "Pony Tail",
+        "dress_style": "The Fasionista",
         "age" : 24
     }
   ]

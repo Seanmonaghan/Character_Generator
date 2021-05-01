@@ -6,73 +6,29 @@
 
 <div class="row mt-4">
   <div class="col-md-6">
-    <h3>Create a New Character:</h3>
+    <h3>Create a New Project:</h3>
 
-    <form class="form new-character-form">
+    <form class="form new-project-form">
       <div class="form-group">
-        <label for="name">Character's Name:</label>
-        <input class="form-input" type="text" id="name" name="name" />
-      </div>
-
-      <div class="form-group">
-        <label for="personality">Character's Personality:</label>
-        <input class="form-input" type="text" id="personality" name="personality" />
-      </div>
-
-      <div class="form-group">
-        <label for="hairstyle">Character's Hairstyle:</label>
-        <input class="form-input" type="text" id="hairstyle" name="hairstyle" />
-      </div>
-
-       <div class="form-group">
-        <label for="age">Character's Date of Birth:</label>
-        <input class="form-input" type="text" id="age" name="age" />
-      </div>
-      {{!-- {{#if games.length}}
-      <div>
-        <label for="charactersGame">What game does this character belong to?</label>
-        <select name="charactersGame" id="charactersGame"></select>
-        {{#each games as |game|}}
-        <option value="{{game}}">{{game}}</option>
-        {{/each}}
-      </div>
-      {{/if}} --}}
-
-
-      <div class="form-group">
-        <button type="submit" class="btn btn-primary">Create Character</button>
-      </div>
-    </form>
-  </div>
-
-
-  <div class="col-md-6">
-    <h3>Create a New Game:</h3>
-
-    <form class="form new-game-form">
-      <div class="form-group">
-        <label for="title">Game's Title:</label>
-        <input class="form-input" type="text" id="title" name="title" />
+        <label for="character-name">Character Name:</label>
+        <input class="form-input" type="text" id="character-name" name="character-name" />
       </div>
       <div class="form-group">
-        <label for="genre">Game's Genre:</label>
-        <input class="form-input" type="text" id="genre" name="genre" />
+        <label for="project-funding">needed funding ($):</label>
+        <input class="form-input" type="number" id="project-funding" name="project-funding" />
       </div>
       <div class="form-group">
-        <label for="description">Game's Description:</label>
-        <textarea class="form-input" type="text" id="description" name="description"></textarea>
+        <label for="project-desc">description:</label>
+        <textarea class="form-input" id="project-desc" name="project-desc"></textarea>
       </div>
-
-
-
       <div class="form-group">
         <button type="submit" class="btn btn-primary">Create</button>
       </div>
     </form>
   </div>
 
-  {{!-- {{#if projects.length}}
-  <div class="col-md-12 project-list">
+  {{#if projects.length}}
+  <div class="col-md-6 project-list">
     <h3>Current Projects:</h3>
 
     {{#each projects as |project|}}
@@ -87,6 +43,6 @@
     {{/each}}
   </div>
   {{/if}}
-</div> --}}
+</div>
 
 <script src="./js/profile.js"></script>
