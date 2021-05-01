@@ -14,18 +14,20 @@ const seedDatabase = async () => {
     returning: true,
   });
 
-  for (const character of characterData) {
-    await Character.create({
-      ...character,
-      user_id: users[Math.floor(Math.random() * users.length)].id,
-      game_id: users[Math.floor(Math.random() * users.length)].id,
-    });
-  }
+
 
   for (const game of gameData) {
     await Game.create({
       ...game,
       user_id: users[Math.floor(Math.random() * users.length)].id,
+    });
+  }
+
+  for (const character of characterData) {
+    await Character.create({
+      ...character,
+      user_id: users[Math.floor(Math.random() * users.length)].id,
+      game_id: users[Math.floor(Math.random() * users.length)].id,
     });
   }
 

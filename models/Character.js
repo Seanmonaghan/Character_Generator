@@ -44,6 +44,7 @@ Character.init(
         },
         game_id: {
             type: DataTypes.INTEGER,
+            allowNull: true,
             references: {
                 model: 'game',
                 key: 'id'

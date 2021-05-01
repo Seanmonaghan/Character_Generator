@@ -7,12 +7,24 @@ const withAuth = require('../utils/auth')
 
 router.get('/', async (req, res) => {
     try {
-        const dbCharacterData = await Character.findAll({
+        const CharacterGameData = await Character.findAll({
             include: [
                 {
                     model: User,
                     all: true,
                     nested: true
+                },
+                {
+                    model: Character,
+                    all: true,
+                    required: false,
+                    include: [
+                        {
+                            model: User,
+                            all: true,
+                            required: false
+                        }
+                    ]
                 }
             ]
         });
@@ -27,12 +39,12 @@ router.get('/', async (req, res) => {
             ]
         })
 
-        const characters = dbCharacterData.map((character) => character.get({plain: true}));
-        const games = dbGameData.map((game) => game.get({plain: true}));
+        const characters = CharacterGameData.map((character) => character.get({plain: true}));
+        // const games = dbGameData.map((game) => game.get({plain: true}));
 
         res.render('homepage', {
-            characters,
-            games
+            characters
+            // games
         });
     } catch (err) {
         console.log(err);
@@ -45,7 +57,7 @@ router.get('/profile', withAuth, async (req, res) => {
       // Find the logged in user based on the session ID
       const userData = await User.findByPk(req.session.user_id, {
         attributes: { exclude: ['password'] },
-        include: [{ model: Character }],
+        // include: [{ model: Character }],
       });
   
       const user = userData.get({ plain: true });
