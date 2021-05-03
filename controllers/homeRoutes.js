@@ -59,21 +59,12 @@ router.get('/profile', withAuth, async (req, res) => {
             }
         ],
       });
-
-      const characterData = await Character.findAll(req.session.user_id, {
-          include: [{
-              model: Character,
-              required: false,
-              all: true
-          }]
-      })
   
       const user = userData.get({ plain: true });
-      const char = characterData.map(char => char.get({plain: true}));
+
   
       res.render('profile', {
         ...user,
-        ...char,
         logged_in: true
       });
     } catch (err) {
@@ -108,7 +99,20 @@ router.get('/game/:id', async (req, res) => {
 
 router.get('/character/:id', async (req, res) => {
     try {
-        const characterData = await Character.findByPk(req.params.id);
+        const characterData = await Character.findByPk(req.params.id, {
+            include: [
+                {
+                    model: Game,
+                    required: false,
+                    all: true
+                },
+                {
+                    model: User,
+                    required:false,
+                    all: true
+                }
+            ]
+        });
 
         const character = characterData.get({plain:true});
 

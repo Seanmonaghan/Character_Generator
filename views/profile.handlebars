@@ -69,10 +69,17 @@
         <label for="character-name">Game:</label>
         <select name ='game' id ="game">
         {{#each games as |game|}}
-        <option value = "{{game.title}}">{{game.title}}</option>
+        <option value = "{{game.id}}">{{game.title}}</option>
         {{/each}}
         </select>
       </div>
+      {{else}}
+        <div class="form-group">
+          <label for="character-name">Game:</label>
+          <select name ='game' id ="game">
+            <option value="" disabled selected> No Games Added Yet </option>
+          </select>
+        </div>
       {{/if}}
 
        <div class="form-group">

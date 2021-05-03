@@ -1,14 +1,12 @@
-  <h2>Character Name: {{character.first_name}} {{character.last_name}}</h2>
+  <h1>{{character.first_name}} {{character.last_name}}</h1>
+
+  
+    
+    <h4>Character Details</h4>
     <p>
       Character personality: {{character.personality}}
     </p>
-    <p>
-      Game Description: {{game.description}}
-    </p>
-    <p>
-      Created by {{game.user.name}}
-    </p>
-    <p>
+     <p>
       Character hairstyle: {{character.hairstyle}}
     </p>
     <p>
@@ -17,7 +15,16 @@
     <p>
       Character age: {{character.age}}
     </p>
-  {{!-- <p>
-    <button class="btn btn-primary">Create Character</button>
-  </p> --}}
+
+    <h4>Character's Game</h4>
+    <p>
+      Game Title: <a href="/game/{{character.game.id}}">{{character.game.title}}</a>
+    </p>
+    <p>
+      Game Description: {{character.game.description}}
+    </p>
+    <p>
+      Created by {{character.user.name}}
+    </p>
+   
 </div>

@@ -1,8 +1,8 @@
-var first_names = ["Bob", "Tom", "Steven", "Sarah", "Jill"];
-var last_names = ["Osborn", "Jackson", "Erwin", "Booker", "Bowie"];
-var personalities = ["The Duty Fulfiller", "The Nurturer", "The Protector", "The Scientist", "The Mechanic", "The Artist", "The Idealist", "The Doer", "The Performer", "The Inspirer", "The Visionary", "The Guardian", "The Caregiver", "The Giver", "The Executive"];
-var hairstyles = ["Crew Cut", "Bowl Cut", "Caeser Cut", "Bob Cut", "Pixie Cut", "Undercut", "Mohawk",  ]
-var dress_styles = ["Gothic", "Casual", "Hipster", "Thrift Store Chic", "Ivy League", "Bohemian"]
+let first_names = ["Bob", "Tom", "Steven", "Sarah", "Jill"];
+let last_names = ["Osborn", "Jackson", "Erwin", "Booker", "Bowie"];
+let personalities = ["The Duty Fulfiller", "The Nurturer", "The Protector", "The Scientist", "The Mechanic", "The Artist", "The Idealist", "The Doer", "The Performer", "The Inspirer", "The Visionary", "The Guardian", "The Caregiver", "The Giver", "The Executive"];
+let hairstyles = ["Crew Cut", "Bowl Cut", "Caeser Cut", "Bob Cut", "Pixie Cut", "Undercut", "Mohawk",  ]
+let dress_styles = ["Gothic", "Casual", "Hipster", "Thrift Store Chic", "Ivy League", "Bohemian"]
 
 const newFormHandler = async (event) => {
     event.preventDefault();
@@ -11,14 +11,15 @@ const newFormHandler = async (event) => {
     const last_name = document.querySelector('#last_name').value.trim();
     const personality = document.querySelector('#personality').value.trim();
     const hairstyle = document.querySelector('#hairstyle').value.trim();
-    const dressStyle = document.querySelector('#dress_style').value.trim();
+    const dress_style = document.querySelector('#dress_style').value.trim();
     const age = document.querySelector('#age').value.trim();
-    const game = document.querySelector('#game').value.trim();
+    const game_id = document.querySelector('#game').value;
 
-    if (first_name && last_name && personality && hairstyle && dressStyle && age) {
+
+    if (first_name && last_name && personality && hairstyle && dress_style && age) {
       const response = await fetch(`/api/characters`, {
         method: 'POST',
-        body: JSON.stringify({ first_name, last_name, personality, hairstyle, dressStyle, age, game }),
+        body: JSON.stringify({ first_name, last_name, personality, hairstyle, dress_style, age, game_id}),
         headers: {
           'Content-Type': 'application/json',
         }
