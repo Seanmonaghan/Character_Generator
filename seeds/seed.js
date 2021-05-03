@@ -26,8 +26,7 @@ const seedDatabase = async () => {
   for (const character of characterData) {
     await Character.create({
       ...character,
-      user_id: users[Math.floor(Math.random() * users.length)].id,
-      game_id: users[Math.floor(Math.random() * users.length)].id,
+      user_id: users[Math.floor(Math.random() * users.length)].id
     });
   }
 

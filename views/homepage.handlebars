@@ -1,5 +1,5 @@
 <!-- Loop over each object in the projects array -->
- <h1><stong>Character Set</stong></h1>
+ <h1><strong>Character Set</strong></h1>
 {{#each characters as |character| }}
 
 <div class="row mb-4 project">
@@ -19,7 +19,7 @@
 
 {{/each}}
  
- <h1><stong>Game Choices</stong></h1>
+ <h1><strong>Game Choices</strong></h1>
 {{#each games as |game|}}
 
 <div class="row mb-4 project">
@@ -33,12 +33,6 @@
   <div class="col-md-7">
     <p>
       Game Title: <a href="/game/{{game.id}}">{{game.title}}</a>
-    </p>
-    <p>
-      Game Genre: {{game.genre}}
-    </p>
-    <p>
-      Game Description: {{game.description}}
     </p>
   </div>
 </div>
