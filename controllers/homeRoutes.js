@@ -60,20 +60,20 @@ router.get('/profile', withAuth, async (req, res) => {
         ],
       });
 
-    //   const characterData = await Character.findAll(req.session.user_id, {
-    //       include: [{
-    //           model: Character,
-    //           required: false,
-    //           all: true
-    //       }]
-    //   })
+      const characterData = await Character.findAll(req.session.user_id, {
+          include: [{
+              model: Character,
+              required: false,
+              all: true
+          }]
+      })
   
       const user = userData.get({ plain: true });
-    //   const char = characterData.map(char => char.get({plain: true}));
+      const char = characterData.map(char => char.get({plain: true}));
   
       res.render('profile', {
         ...user,
-        // ...char,
+        ...char,
         logged_in: true
       });
     } catch (err) {

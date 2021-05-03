@@ -5,7 +5,8 @@
         "personality": "The Healer",
         "hairstyle": "Bro Flow",
         "dress_style": "Doctors Scrubs",
-        "age" : 25
+        "age" : 25,
+        "game_id": 2
     },
     {
         "first_name": "Deckard",
@@ -13,7 +14,8 @@
         "personality": "The Mastermind",
         "hairstyle": "Buzz Cut",
         "dress_style": "The Classic Style Guy",
-        "age" : 40
+        "age" : 40,
+        "game_id": 1
     },
     {
         "first_name": "Ricky",
@@ -21,7 +23,8 @@
         "personality": "The Counselor",
         "hairstyle": "Caesar Cut",
         "dress_style": "The Jet-Setter",
-        "age" : 32
+        "age" : 32,
+        "game_id": 3
     },
     {
         "first_name": "Samus",
@@ -29,6 +32,7 @@
         "personality": "The Champion",
         "hairstyle": "Pony Tail",
         "dress_style": "The Fasionista",
-        "age" : 24
+        "age" : 24,
+        "game_id": 3
     }
   ]

@@ -122,6 +122,7 @@ function generateRandomDressStyle() {
 }
 
 function generateRandomAge() {
+  event.preventDefault();
   const ageEl = document.querySelector('#age');
   var age = Math.floor(Math.random() * 84 + 16);
   ageEl.value = age;
