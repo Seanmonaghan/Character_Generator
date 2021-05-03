@@ -111,10 +111,10 @@
     </form>
   </div>
 
-{{#if characters.length}}
+
 <div class="col-md-6 character-list">
   <h3>Current Characters</h3>
-
+{{#if characters.length}}
   {{#each characters as |character|}}
     <div class="row mb-2">
       <div class="col-md-8">
@@ -125,12 +125,13 @@
     </div>
   </div>
   {{/each}}
-</div>
 {{/if}}
+</div>
+
+<div class="col-md-6 games-list">
+    <h3>Current Games:</h3>
 
   {{#if games.length}}
-  <div class="col-md-6 games-list">
-    <h3>Current Games:</h3>
 
     {{#each games as |game|}}
     <div class="row mb-2">
@@ -142,8 +143,8 @@
       </div>
     </div>
     {{/each}}
-  </div>
   {{/if}}
+    </div>
 </div>
 
 <script src="./js/profile.js"></script>
