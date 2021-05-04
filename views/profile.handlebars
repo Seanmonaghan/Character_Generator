@@ -1,10 +1,9 @@
-<div class="row">
-  <div class="col-auto">
-    <h2>Welcome, {{name}}</h2>
-  </div>
+<div class="col-auto">
+  <h2>Welcome, {{name}}</h2>
 </div>
 
-<div class="row mt-4">
+
+<div class="row">
   <div class="col-md-6">
     <h3>Create a New Character:</h3>
 
@@ -12,86 +11,109 @@
 
       <div class="form-group">
         <label for="first_name">Character's First Name:</label>
-        <div class="row ">
-        <input class="form-input col-md-8" type="text" id="first_name" name="first_name" />
+        <div class="row">
+        <input class="form-input col-md-8" type="text" id="first_name" name="first_name"/>
          <div>
         <button id = "first_name_button" class = "col-md-12">Randomize</button>
         </div>
       </div>
       </div>
 
+
       
 
       <div class="form-group">
         <label for="last_name">Character's Last Name:</label>
-        <input class="form-input" type="text" id="last_name" name="last_name" />
-      </div>
+        <div class="row">
+        <input class="form-input col-md-8" type="text" id="last_name" name="last_name" />
+      
 
       <div>
-        <button id = "last_name_button">Randomize</button>
+        <button id = "last_name_button" class = "col-md-12">Randomize</button>
+      </div>
+      </div>
       </div>
 
       <div class="form-group">
         <label for="personality">Character's Personality:</label>
-        <input class="form-input" type="text" id="personality" name="personality" />
-      </div>
+        <div class="row">
+        <input class="form-input col-md-8" type="text" id="personality" name="personality" />
+      
 
       <div>
-        <button id = "personality_button">Randomize</button>
+        <button id = "personality_button" class = "col-md-12">Randomize</button>
+      </div>
       </div>
 
       <div class="form-group">
         <label for="hairstyle">Character's Hairstyle:</label>
-        <input class="form-input" type="text" id="hairstyle" name="hairstyle" />
-      </div>
+        <div class="row">
+        <input class="form-input col-md-8" type="text" id="hairstyle" name="hairstyle" />
+      
 
       <div>
-        <button id = "hair_style_button">Randomize</button>
+        <button id = "hair_style_button" class = "col-md-12">Randomize</button>
+      </div>
       </div>
 
       <div class="form-group">
         <label for="dress_style">Character's Dress Style:</label>
-        <input class="form-input" type="text" id="dress_style" name="dress_style" />
-      </div>
+        <div class="row">
+        <input class="form-input col-md-8" type="text" id="dress_style" name="dress_style" />
+      
 
       <div>
-        <button id = "dress_style_button">Randomize</button>
+        <button id = "dress_style_button" class = "col-md-12">Randomize</button>
+      </div>
+      </div>
       </div>
 
       <div class="form-group">
         <label for="age">Character's Age:</label>
-        <input class="form-input" type="number" id="age" name="age" />
-      </div>
+        <div class="row">
+        <input class="form-input col-md-8" type="number" id="age" name="age" />
+      
 
       <div>
-        <button id = "age_button">Randomize</button>
+        <button id = "age_button" class = "col-md-12">Randomize</button>
+      </div>
+      </div>
       </div>
 
       <div class="form-group">
         <label for="strength">Strength:</label>
-        <input class="form-input" type="number" id="strength" name="strength" />
-      </div>
+        <div class="row">
+        <input class="form-input col-md-8" type="number" id="strength" name="strength" />
+      
 
       <div>
-        <button id = "strength_button">Randomize</button>
+        <button id = "strength_button" class = "col-md-12">Randomize</button>
+      </div>
+      </div>
       </div>
 
       <div class="form-group">
-        <label for="defence">Defence:</label>
-        <input class="form-input" type="number" id="defence" name="defence" />
-      </div>
+        <label for="defense">Defense:</label>
+        <div class="row">
+        <input class="form-input col-md-8" type="number" id="defense" name="defense" />
+      
 
       <div>
-        <button id = "defence_button">Randomize</button>
+        <button id = "defense_button" class = "col-md-12">Randomize</button>
+      </div>
+      </div>
       </div>
 
       <div class="form-group">
         <label for="stamina">Stamina:</label>
-        <input class="form-input" type="number" id="stamina" name="stamina" />
-      </div>
+        <div class="row">
+          <input class="form-input col-md-8" type="number" id="stamina" name="stamina" />
+      
 
       <div>
-        <button id = "stamina_button">Randomize</button>
+        <button id = "stamina_button" class = "col-md-12">Randomize</button>
+      </div>
+      </div>
       </div>
 
       {{#if games}}
@@ -118,11 +140,15 @@
 
     </form>
   </div>
+  </div>
+    </div>
+
+
 
    <div class="col-md-6">
     <h3>Create a New Game:</h3>
 
-    <form class="form new-game-form">
+    <form class="form new-game-form" autocomplete = "off">
       <div class="form-group">
         <label for="title">Game's Title:</label>
         <input class="form-input" type="text" id="title" name="title" />
@@ -133,7 +159,7 @@
       </div>
       <div class="form-group">
         <label for="description">Description:</label>
-        <textarea class="form-input" id="description" name="description"></textarea>
+        <textarea class="form-input" id="description" style="height: 200px;" name="description"></textarea>
       </div>
       <div class="form-group">
         <button type="submit" class="btn btn-primary">Create Game</button>
@@ -141,9 +167,10 @@
     </form>
   </div>
 
-{{#if characters.length}}
 <div class="col-md-6 character-list">
   <h3>Current Characters</h3>
+
+{{#if characters.length}}
 
   {{#each characters as |character|}}
     <div class="row mb-2">
@@ -155,13 +182,12 @@
     </div>
   </div>
   {{/each}}
-</div>
 {{/if}}
+</div>
 
-  {{#if games.length}}
   <div class="col-md-6 games-list">
     <h3>Current Games:</h3>
-
+  {{#if games.length}}
     {{#each games as |game|}}
     <div class="row mb-2">
       <div class="col-md-8">
@@ -172,8 +198,8 @@
       </div>
     </div>
     {{/each}}
-  </div>
   {{/if}}
+    </div>
 </div>
 
 <script src="/js/profile.js"></script>

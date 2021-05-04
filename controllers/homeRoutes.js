@@ -65,7 +65,7 @@ router.get('/profile', withAuth, async (req, res) => {
   
       res.render('profile', {
         ...user,
-        logged_in: true
+        logged_in: req.session.logged_in
       });
     } catch (err) {
       res.status(500).json(err);
@@ -90,7 +90,7 @@ router.get('/game/:id', async (req, res) => {
         });
 
         const game = dbGameData.get({ plain: true });
-        res.render('game', {game});
+        res.render('game', {game, logged_in: req.session.logged_in});
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
@@ -116,7 +116,7 @@ router.get('/character/:id', async (req, res) => {
 
         const character = characterData.get({plain:true});
 
-        res.render('character', {character});
+        res.render('character', {character, logged_in: req.session.logged_in});
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
