@@ -6,7 +6,10 @@
         "hairstyle": "Bro Flow",
         "dress_style": "Doctors Scrubs",
         "age" : 25,
-        "game_id": 2
+        "game_id": 2,
+        "strength": 10,
+        "defense": 55,
+        "stamina": 7
     },
     {
         "first_name": "Deckard",
@@ -15,7 +18,10 @@
         "hairstyle": "Buzz Cut",
         "dress_style": "The Classic Style Guy",
         "age" : 40,
-        "game_id": 1
+        "game_id": 1,
+        "strength": 10,
+        "defense": 5,
+        "stamina": 70
     },
     {
         "first_name": "Ricky",
@@ -24,7 +30,10 @@
         "hairstyle": "Caesar Cut",
         "dress_style": "The Jet-Setter",
         "age" : 32,
-        "game_id": 3
+        "game_id": 3,
+        "strength": 10,
+        "defense": 50,
+        "stamina": 7
     },
     {
         "first_name": "Samus",
@@ -33,6 +42,9 @@
         "hairstyle": "Pony Tail",
         "dress_style": "The Fasionista",
         "age" : 24,
-        "game_id": 3
+        "game_id": 3,
+        "strength": 7,
+        "defense": 10,
+        "stamina": 7
     }
   ]

@@ -14,12 +14,15 @@ const newFormHandler = async (event) => {
     const dress_style = document.querySelector('#dress_style').value.trim();
     const age = document.querySelector('#age').value.trim();
     const game_id = document.querySelector('#game').value;
+    const strength = document.querySelector("#strength").value.trim();
+    const defense = document.querySelector("#defense").value.trim();
+    const stamina = document.querySelector("#stamina").value.trim();
 
 
     if (first_name && last_name && personality && hairstyle && dress_style && age) {
       const response = await fetch(`/api/characters`, {
         method: 'POST',
-        body: JSON.stringify({ first_name, last_name, personality, hairstyle, dress_style, age, game_id}),
+        body: JSON.stringify({ first_name, last_name, personality, hairstyle, dress_style, age, game_id, strength, defense, stamina}),
         headers: {
           'Content-Type': 'application/json',
         }
@@ -128,6 +131,30 @@ function generateRandomAge() {
   var age = Math.floor(Math.random() * 84 + 16);
   ageEl.value = age;
 }
+
+function generateRandomStrength() {
+  event.preventDefault();
+  const strengthEl = document.querySelector('#strength');
+  var value = Math.floor(Math.random() * 1000);
+  strengthEl.value = value;
+}
+
+function generateRandomDefense() {
+  event.preventDefault();
+  const defenseEl = document.querySelector('#defense');
+  var value = Math.floor(Math.random() * 1000);
+  defenseEl.value = value;
+}
+
+function generateRandomStamina() {
+  event.preventDefault();
+  const staminaEl = document.querySelector('#stamina');
+  var value = Math.floor(Math.random() * 1000);
+  staminaEl.value = value;
+}
+
+
+
 // Add Character
 document
     .querySelector('.new-character-form')
@@ -153,3 +180,6 @@ document.querySelector("#personality_button").addEventListener('click', generate
 document.querySelector("#hair_style_button").addEventListener('click', generateRandomHairstyle)
 document.querySelector("#dress_style_button").addEventListener('click', generateRandomDressStyle)
 document.querySelector("#age_button").addEventListener('click', generateRandomAge)
+document.querySelector("#strength_button").addEventListener('click', generateRandomStrength)
+document.querySelector("#defense_button").addEventListener('click', generateRandomDefense)
+document.querySelector("#stamina_button").addEventListener('click', generateRandomStamina)

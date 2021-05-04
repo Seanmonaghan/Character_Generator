@@ -35,6 +35,18 @@ Character.init(
             type:DataTypes.INTEGER,
             allowNull: true
         },
+        strength: {
+            type:DataTypes.INTEGER,
+            allowNull: true
+        },
+        defense: {
+            type:DataTypes.INTEGER,
+            allowNull: true
+        },
+        stamina: {
+            type:DataTypes.INTEGER,
+            allowNull: true
+        },
         user_id: {
             type: DataTypes.INTEGER,
             references: {

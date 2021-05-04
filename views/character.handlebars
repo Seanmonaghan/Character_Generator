@@ -1,7 +1,8 @@
+<div>
   <h1>{{character.first_name}} {{character.last_name}}</h1>
 
-  
-    
+<div class="row"> 
+    <div class="col-md-6">
     <h4>Character Details</h4>
     <p>
       Character personality: {{character.personality}}
@@ -15,6 +16,19 @@
     <p>
       Character age: {{character.age}}
     </p>
+        
+    <h4>Character Stats:</h4>
+      Strength: <span id = "strength">{{character.strength}}</span><br>
+      Defense: <span id = "defense">{{character.defense}}</span><br>
+      Stamina: <span id = "stamina">{{character.stamina}}</span>
+  </div>
+    <div class = "col-md-4">
+      <canvas id="myChart"></canvas>
+    </div>
+</div>
+
+<div>
+    
 
     <h4>Character's Game</h4>
     <p>
@@ -28,3 +42,42 @@
     </p>
    
 </div>
+</div>
+
+<script>
+
+let ctx = document.getElementById('myChart').getContext('2d');
+let strength = document.getElementById('strength').textContent;
+let defense = document.getElementById('defense').textContent;
+let stamina = document.getElementById('stamina').textContent;
+
+
+let testChart = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+        labels: ['Strength', 'Defense', 'Stamina'],
+        datasets: [{
+            label: "Values",
+            data: [
+                strength,
+                defense,
+                stamina
+            ],
+            backgroundColor: [
+              'rgba(255, 99, 132, 0.5',
+              'rgba(54, 162, 235, 0.5)',
+              'rgba(255, 206, 86, 0.5)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {}
+});
+
+</script>
+
