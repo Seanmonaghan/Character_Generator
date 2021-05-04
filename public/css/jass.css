@@ -1165,6 +1165,7 @@ form [type='radio'] {
 }
 
 .container {
+  padding: 2rem;
   width: 85%;
   max-width: 1200px;
   margin-left: auto;
