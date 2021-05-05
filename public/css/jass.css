@@ -5,7 +5,7 @@
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
-html {
+ html {
   line-height: 1.15;
   /* 1 */
   -webkit-text-size-adjust: 100%;
@@ -155,7 +155,7 @@ select,
 textarea {
   font-family: inherit;
   /* 1 */
-  font-size: 100%;
+  font-size: 60%;
   /* 1 */
   line-height: 1.15;
   /* 1 */
@@ -376,7 +376,7 @@ h1 {
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: 4rem;
 }
 
 h3 {
@@ -1141,7 +1141,7 @@ form .form-label {
 
 form .form-input {
   width: 100%;
-  padding: 0.75rem;
+  padding: 0.60rem;
   color: #1a1a1a;
   background-color: #ffffff;
   margin: 0.625rem 0;
@@ -1253,15 +1253,15 @@ form [type='radio'] {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  margin-left: -15px;
-  margin-right: -15px;
+  margin-left: -12px;
+  margin-right: -12px;
 }
 
 [class*='col-'] {
   position: relative;
   width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: 20px;
+  padding-left: 20px;
 }
 
 .col-auto {
