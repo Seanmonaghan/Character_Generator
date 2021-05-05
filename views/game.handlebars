@@ -1,8 +1,10 @@
-  <h2>{{game.title}}</h2>
-  <p>{{{game.genre}}}</p>
-  <p>{{game.description}}</p>
+  <h2>Game Title: {{game.title}}</h2>
+  <p>Game Genre: {{{game.genre}}}</p>
+  <p>Game Description: {{game.description}}</p>
   <p>Created by {{game.user.name}}</p>
-  {{!-- <p>
-    <button class="btn btn-primary">Create Character</button>
-  </p> --}}
+
+  <h2>Characters:</h2>
+  {{#each game.characters as |character|}}
+  <a href="/character/{{character.id}}">{{this.first_name}} {{this.last_name}}</a>
+  {{/each}}
 </div>

@@ -14,18 +14,6 @@ router.get('/', async (req, res) => {
                     all: true,
                     nested: true
                 },
-                {
-                    model: Character,
-                    all: true,
-                    required: false,
-                    include: [
-                        {
-                            model: User,
-                            all: true,
-                            required: false
-                        }
-                    ]
-                }
             ]
         });
 
@@ -40,10 +28,11 @@ router.get('/', async (req, res) => {
         })
 
         const characters = CharacterGameData.map((character) => character.get({plain: true}));
-        // const games = dbGameData.map((game) => game.get({plain: true}));
+        const games = dbGameData.map((game) => game.get({plain: true}));
 
         res.render('homepage', {
-            characters,
+            characters:characters,
+            games:games,
             logged_in: req.session.logged_in
         });
     } catch (err) {
@@ -70,22 +59,13 @@ router.get('/profile', withAuth, async (req, res) => {
             }
         ],
       });
-
-    //   const characterData = await Character.findAll(req.session.user_id, {
-    //       include: [{
-    //           model: Character,
-    //           required: false,
-    //           all: true
-    //       }]
-    //   })
   
       const user = userData.get({ plain: true });
-    //   const char = characterData.map(char => char.get({plain: true}));
+
   
       res.render('profile', {
         ...user,
-        // ...char,
-        logged_in: true
+        logged_in: req.session.logged_in
       });
     } catch (err) {
       res.status(500).json(err);
@@ -110,7 +90,7 @@ router.get('/game/:id', async (req, res) => {
         });
 
         const game = dbGameData.get({ plain: true });
-        res.render('game', {game});
+        res.render('game', {game, logged_in: req.session.logged_in});
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
@@ -119,11 +99,24 @@ router.get('/game/:id', async (req, res) => {
 
 router.get('/character/:id', async (req, res) => {
     try {
-        const characterData = await Character.findByPk(req.params.id);
+        const characterData = await Character.findByPk(req.params.id, {
+            include: [
+                {
+                    model: Game,
+                    required: false,
+                    all: true
+                },
+                {
+                    model: User,
+                    required:false,
+                    all: true
+                }
+            ]
+        });
 
         const character = characterData.get({plain:true});
 
-        res.render('character', {character});
+        res.render('character', {character, logged_in: req.session.logged_in});
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
